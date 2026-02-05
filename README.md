@@ -1,10 +1,14 @@
 # Instruções
 
-## COMANDOS BÁSICAS
+## Branch
+
+Mostrar branches no computador:
+```
+git branch
+```
 
 # Streamlit.
-I
-NSTRUÇÕES PARA USAR STREAMLIT
+INSTRUÇÕES PARA USAR STREAMLIT
 1. Abra VSCode na pasta Downloads
 
 2. Digite no terminal do VSCode os comandos:
