@@ -1,79 +1,40 @@
-# Instruções
+# GIT
 
-# PA-Senai-99159
+## COMANDOS BÁSICOS
 
-# Streamlit.
-I
-NSTRUÇÕES PARA USAR STREAMLIT
-1. Abra VSCode na pasta Downloads
-
-2. Digite no terminal do VSCode os comandos:
-```
-python -m venv venv
-```
-3. Ative o ambiente virtual:
-v TAB
-s TAB
-a TAB
-ENTER
-
-4. Instale o Streamlit:
-```
-pip install streamlit
-```
-5. Agora pode criar seus códigos, mas para executar com Streamlit execute o comando:
-streamlit run arquivo.py
-
-6. Para interromper a execução do Streamlit use as teclas:
-CTRL C
-
-## Início da aula.
-
-1) Fazer login no GitHub no navegador de internet
-
-
-2) Fazer login no GitHub via terminal:
+Autenticar via computador local no Github:
 ```
 gh auth login
 ```
-- Aperte a tecla enter até gerar um código
-- Copie o código gerado no terminal e cole no navegador de internet
 
-
-3) Clonar o repositório usado nas aulas para o computador:
+Clonar repositório no Github:
 ```
 gh repo clone nome-do-repositorio
 ```
 
-
-4) Entrar na pasta criada com o clone do repositório:
-```
-cd nome-do-repositorio
-```
-
-5) Abrir o VSCode pelo terminal:
+Abrir VS Code:
 ```
 code .
 ```
 
-## Durante a aula:
+## Salvar no Github
 
-1) Adicionando arquivos para o commit.
+Preparar arquivos para salvar:
 ```
 git add .
 ```
 
-2) Realizando o commit.
+Comando para versionar (salvar):
 ```
-git commit -m "feat: o que foi feito."
+git commit -m "mensagem"
 ```
 
-3) Atualizar com dados do GitHub.
+Baixar atualizações do Github:
 ```
 git pull
 ```
 
-4) Enviar para GitHub.
+Enviar para Github:
 ```
 git push
 ```
