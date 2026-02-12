@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'Stagera';
+  src: url('/src/fonts/stagera.otf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --brick-ember: #c0301eff;
+  --persian-blue: #1940b0ff;
+  --bright-lemon: #f5e525ff;
+  --sea-green: #00946cff;
+  --deep-pink: #e152a5ff;
+  --metallic-gold: #c3a62fff;
+  --silver: #abababff;
+  --carbon-black: #212121ff;
+  --royal-orchid: #7d258fff;
+  --chocolate: #e16f24ff;
+  --fonte-principal: 'Bangers', cursive;
+  --fonte-texto: 'Open Sans', Arial;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: var(--fonte-texto);
+
+  background: linear-gradient(
+    -45deg,
+    var(--chocolate),
+    var(--silver), 
+    var(--persian-blue),
+    var(--sea-green),
+    var(--brick-ember),
+    var(--deep-pink),
+    var(--royal-orchid),
+    var(--bright-lemon),
+    var(--metallic-gold)
+  );
+  background-size: 400% 400%;
+
+  animation: moverCores 15s ease infinite;
+}
+
+@keyframes moverCores {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card {
+    position: relative;
+    width: 300px;         /* Largura inicial (fechado) */
+    height: 120px;        /* Altura inicial (fechado) */
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+    
+    /* Transição suave para largura e altura */
+    transition: all 0.5s ease-in-out; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- ESTADO HOVER DO CARD (CORRIGIDO) --- */
+.card:hover {
+    width: 900px;  /* Largura bem aberta */
+    height: 850px; /* Aumentei para 850px para caber a imagem GRANDE e o texto */
+}
+
+/* --- A IMAGEM (Transformação Círculo -> Banner) --- */
+.img-box {
+    position: absolute;
+    /* Estado Inicial: Círculo flutuando no topo */
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%); /* Centralizado */
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 50%; /* Círculo */
+    box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+    overflow: hidden;
+    z-index: 10;
+    border: 5px solid var(--brick-ember);
+    
+    transition: all 0.5s ease-in-out;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- ESTADO HOVER DA IMAGEM (CORRIGIDO) --- */
+.card:hover .img-box {
+    top: 0;
+    left: 0;
+    transform: none; /* Remove a centralização antiga */
+    
+    width: 100%;   /* Ocupa a largura total */
+    height: 450px; /* Aumentei de 250px para 450px para ficar PROPORCIONAL */
+    border-radius: 20px 20px 0 0; /* Arredonda só em cima */
+    border: none;
+    box-shadow: none;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    padding: 0 60px; /* Aumentei o padding lateral para ficar elegante */
+    text-align: center;
+    
+    /* Posição e Transição */
+    top: 250px; /* Mantém abaixo da imagem */
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+/* --- ESTADO HOVER DO CONTEÚDO (CORRIGIDO) --- */
+.card:hover .content {
+    top: 470px; /* Empurrei para baixo (450px da imagem + 20px de folga) */
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.2s;
+}
+
+/* --- Tipografia e Elementos --- */
+.content h1 {
+    font-family: var(--fonte-principal);
+    font-size: 50px;
+    color: var(--brick-ember);
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.content h2 {
+    font-family: var(--fonte-principal);
+    font-size: 24px;
+    color: var(--persian-blue);
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 15px; /* Tamanho bom para leitura */
+    color: #333;
+    line-height: 1.6; /* Espaçamento entre linhas para não cansar */
+    text-align: justify; /* Justifica o bloco de texto */
+    margin-bottom: 30px;
+}
+
+/* Botão */
+.btn-sentai {
+    display: inline-block;
+    padding: 12px 35px;
+    background: var(--brick-ember);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(192, 48, 30, 0.3);
+    transition: 0.3s;
+}
+
+.btn-sentai:hover {
+    background: var(--persian-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(25, 64, 176, 0.4);
+}
