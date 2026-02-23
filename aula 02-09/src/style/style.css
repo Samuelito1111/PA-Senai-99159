@@ -33,9 +33,24 @@ body {
   align-items: center;
   min-height: 100vh;
   font-family: var(--fonte-texto);
+  
+  /* Adicionado para a roda cromática funcionar corretamente */
+  overflow: hidden; 
+  position: relative;
+  background-color: var(--carbon-black); 
+}
 
-  background: linear-gradient(
-    -45deg,
+/* Criando a roda gigante que vai girar atrás do card */
+body::before {
+  content: '';
+  position: absolute;
+  width: 200vmax;
+  height: 200vmax;
+  top: 50%;
+  left: 50%;
+  
+  /* Gradiente Cônico (Fatias de pizza com as cores dos Rangers) */
+  background: conic-gradient(
     var(--chocolate),
     var(--silver), 
     var(--persian-blue),
@@ -44,19 +59,24 @@ body {
     var(--deep-pink),
     var(--royal-orchid),
     var(--bright-lemon),
-    var(--metallic-gold)
+    var(--metallic-gold),
+    var(--chocolate)
   );
-  background-size: 400% 400%;
-
-  animation: moverCores 15s ease infinite;
+  
+  transform-origin: center;
+  animation: girarRodaCromatica 15s linear infinite;
+  z-index: -1; 
 }
 
-@keyframes moverCores {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Animação de rotação contínua */
+@keyframes girarRodaCromatica {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
-
 .card {
     position: relative;
     width: 300px;         /* Largura inicial (fechado) */
