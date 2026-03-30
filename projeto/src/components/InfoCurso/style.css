@@ -1,0 +1,68 @@
+/* Importando uma fonte que lembra o estilo pixelado do jogo */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.info-curso {
+    background-color: #313233; /* Fundo cinza escuro da UI */
+    background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'); /* Textura granulada */
+    
+    /* Borda pixelada clássica do Minecraft usando box-shadow */
+    border: 4px solid #000;
+    box-shadow: 
+        inset -4px -4px 0px #555, 
+        inset 4px 4px 0px #fff;
+    
+    padding: 20px;
+    width: 320px;
+    color: #ffffff;
+    font-family: 'VT323', monospace;
+    image-rendering: pixelated;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    margin: 20px;
+}
+
+/* Estilo do Título (como o título de um baú ou fornalha) */
+.info-curso h2 {
+    color: #e0e0e0;
+    text-shadow: 3px 3px #000;
+    font-size: 2rem;
+    margin-top: 0;
+    text-align: center;
+    image-rendering: pixelated;
+}
+
+/* Estilo dos parágrafos */
+.info-curso p {
+    font-size: 1.4rem;
+    color: #bfbfbf;
+    margin: 8px 0;
+    text-shadow: 2px 2px #000;
+}
+
+/* --- EFEITOS AO PASSAR O MOUSE (HOVER) --- */
+
+.info-curso:hover {
+    /* Efeito de seleção de bloco: borda branca grossa e leve brilho */
+    outline: 4px solid #ffffff;
+    outline-offset: -8px;
+    
+    /* Muda o fundo para parecer um bloco de terra/grama ou madeira iluminada */
+    background-color: #4a4a4a;
+    
+    /* "Pulo" leve para dar feedback de interação */
+    transform: scale(1.05);
+}
+
+/* Pequeno detalhe que imita o "item flutuante" */
+.info-curso::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background-image: url('https://minecraft.wiki/images/Crafting_Table_JE4_BE3.png'); /* Ícone de Crafting Table */
+    background-size: contain;
+    opacity: 0.3;
+}

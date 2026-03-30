@@ -1,0 +1,80 @@
+/* Importando uma fonte de impacto estilo HQ */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.info-aluno {
+    background: #1a1a1a; /* Fundo escuro para destacar as cores */
+    border: 4px solid #b11313; /* Vermelho do traje */
+    border-radius: 15px;
+    padding: 25px;
+    width: 320px;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    
+    /* Sombra azulada que remete aos detalhes do uniforme */
+    box-shadow: 10px 10px 0px #2b3a67; 
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efeito de Teia de Fundo */
+.info-aluno::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(177, 19, 19, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(177, 19, 19, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px; /* Cria um padrão de rede/teia */
+    z-index: 0;
+}
+
+.info-aluno h2 {
+    font-family: 'Bangers', cursive;
+    color: #f1f1f1;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px #b11313;
+    position: relative;
+    z-index: 1;
+}
+
+.info-aluno p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    border-left: 3px solid #2b3a67;
+    padding-left: 10px;
+}
+
+/* --- EFEITOS DE HOVER (SENTIDO ARANHA) --- */
+
+.info-aluno:hover {
+    transform: scale(1.05) rotate(-1deg);
+    border-color: #f1f1f1;
+    
+    /* Efeito Sentido Aranha: Brilho pulsante vermelho e branco */
+    box-shadow: 0 0 20px #b11313, 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+/* Pequeno ícone de aranha que aparece no hover */
+.info-aluno:hover::after {
+    content: "🕷️";
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 2rem;
+    animation: swing 1s infinite alternate ease-in-out;
+}
+
+/* Animação do balanço da aranha */
+@keyframes swing {
+    from { transform: translateY(-5px); }
+    to { transform: translateY(5px); }
+}
